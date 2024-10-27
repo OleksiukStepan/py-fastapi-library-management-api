@@ -74,7 +74,7 @@ def get_book_by_id(db: Session, book_id: int) -> Book:
 
 def get_books_by_author(db: Session, author_id: int) -> list[Book]:
     return (
-        db.query(Book).filter(Book.author_id == author_id).first()
+        db.query(Book).filter(Book.author_id == author_id).all()
     )
 
 
